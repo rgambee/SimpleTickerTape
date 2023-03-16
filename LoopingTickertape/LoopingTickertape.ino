@@ -15,7 +15,7 @@
 
 // Change this to be at least as long as your pixel string (too long will work fine, just be a little slower)
 
-#define PIXEL_COUNT 60      // Length of the strings in pixels. I am using a 1 meter long strings that have 60 LEDs per meter. 
+#define PIXEL_COUNT 99      // Length of the strings in pixels. I am using a 1 meter long strings that have 60 LEDs per meter.
 
 
 #define FRAME_DELAY_MS 50    // Max time in ms for each frame while scrolling. Lower numbers make for faster scrolling (until we run out of speed).
