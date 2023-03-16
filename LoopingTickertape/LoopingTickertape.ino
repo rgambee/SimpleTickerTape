@@ -1117,7 +1117,7 @@ void setup() {
   // Show something on startup so we know it is working
   // (you can delete this branding if you are that kind of person)
   
-  appendStringToBuffer( "SimpleTickertape from JOSH.COM\rloop\r" );
+  appendStringToBuffer("Welcome to Electronics!\r");
 
 }
 
