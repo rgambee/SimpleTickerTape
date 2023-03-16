@@ -25,9 +25,9 @@
 
 // Define the color we will send for on pixels. Each value is a byte 0-255. 
 
-#define COLOR_R 0x40                                          
-#define COLOR_G 0x00                                          
-#define COLOR_B 0x00     
+#define COLOR_R 0x00
+#define COLOR_G 0x00
+#define COLOR_B 0x40
 //#define COLOR_W 0x00     // Uncomment this line if you are using RGBW LED strips
 
 /*------------------- FONT CUT TOP HERE -------------------------------*/
