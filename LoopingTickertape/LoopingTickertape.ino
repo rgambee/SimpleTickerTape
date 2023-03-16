@@ -17,9 +17,10 @@
 
 #define PIXEL_COUNT 99      // Length of the strings in pixels. I am using a 1 meter long strings that have 60 LEDs per meter.
 
+#define FRAME_DELAY_MS 50   // Max time in ms for each frame while scrolling. Lower numbers make for faster scrolling (until we run out of speed).
+                            // Note that we automatically start speeding up when the buffer starts getting full and then slow down again when it starts getting empty.
 
-#define FRAME_DELAY_MS 50    // Max time in ms for each frame while scrolling. Lower numbers make for faster scrolling (until we run out of speed).
-                           // Note that we automatically start speeding up when the buffer starts getting full and then slow down again when it starts getting empty. 
+#define LOOP_GAP 10         // Number of space characters to insert so there's a gap between the end of one cycle and the start of the next
 
 
 // Define the color we will send for on pixels. Each value is a byte 0-255. 
@@ -927,11 +928,15 @@ boolean looping=false;        // Are we currently looping?
 void inline appendToBuffer( const byte b ) {
   
   if ( b=='\r' || b=='\n') {     // CR or LF signal to start looping
-  
+     // Pad out message with spaces so there's a gap between the end of one cycle and the start of the next
+     for (int i = 0; i < LOOP_GAP; ++i) {
+       appendToBuffer(' ');
+     }
+
     if (!looping) {
       looping=true;
     }
-    
+
   } else {
 
     if ( buffer_len < BUFFER_SIZE ) {
